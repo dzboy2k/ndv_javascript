@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Soft scale Inspiration</title>
+      <!-- Master phần hiệu ứng slide qua bài thực hành -->
+      <link rel="stylesheet" href="87. Slide Transition Inspiration.css">
+
+      <link rel="stylesheet" href="font-awesome-master/css/font-awesome.css">
+</head>
+<body>
+      <!-- 88. Xử lý giao diện Project trực tiếp bằng Chrome Dev Tool 
+            - Đầu tiên dặt giao diện fullscreen: 
+                  + Đặt tất cả là height: 100% 
+                  + width: 100% từ trên xuống dưới cho đến thẻ muốn đặt fullscreen
+
+            - Các slide đều phải absolute -> Mỗi li sẽ là absolute, ul là relative
+      -->
+      <!-- 90. Phân tích logic của chương trình
+            - Khi click vào nút thì sẽ có 2 phần tử bị tác động -> Slide hiện tại, slide tiếp theo 
+            - Nếu muốn xử lý được hiệu ứng này, điều đầu tiên phải xác định được 2 cái này -> hientai, tieptheo
+
+            - Bước 1: Bắt được sự kiện click vào nút next
+            - Bước 2: Xác định phần tử hiện tại
+            - Bước 3: Xác định phần tử tiếp theo:      
+                  + slides[] chứa các phần tử slide
+                  + Phải xác định được chỉ số của phần tử tiếp theo
+                  + Dựa vào chỉ số hiện tại: 5 slide -> length = 5 = số lượng slide 
+                        + Nếu chỉ số hiện tại < soluongslide - 1 thì tăng chỉ số lên 1
+                        + Nếu chỉ số hiện tại == soluongslide, vì mảng bắt đầu từ 0, nếu chỉ số hiện tại = 4 suy ra slides[4] chính là phần tử cuối cùng
+            - Bước 4: Thêm chuyển động vào 2 phần tử này bằng với việc thêm class vào 2 phần tử này
+                  + 1. Dùng javascript thêm class -> classList.add(tên class)
+                  + 2. Viết CSS cho 2 class thêm vào
+                  + bienMatKhiAnNext -> phần tử hiện tại
+                  + diVaoKhiAnNext -> phần tử tiếp theo
+            - Bước 5: Sau khi chuyển động xong rồi 
+                  + Chuyển class .dangxem sang slide tiếp theo
+                  + Bỏ đi các class đã thêm ở bước 4 (bỏ đi chuyển động) -> Không cần nữa, về sau không dùng được nữa
+                  + Hàm check chuyển động xong rồi hay chưa
+      -->
+
+      <!-- 98 - Xử lý lỗi khi click liên tiếp nhiều lần 
+            - Khi click vào nút next liên tục thì:    
+                  + Xác định 2 slide: hientai và tieptheo 
+                  + Add class để chuyển động
+                  + Đợi chuyển động xong thì remove class đi và chuyển .dangxem lên class tiếp theo -> Lỗi xảy ra là trong lúc đợi chuyển động tiếp theo thì người dùng lại click
+                  + Sửa lỗi này là -> Trong lúc mà đang chuyển động thì không được click nữa
+                  + Nếu cứ click thì mình biết được là đang chuyển động return false
+                  + Check được quá trình đang xử lý chuyển động mà người dùng click thì mình sẽ dừng luôn chương trình -> return
+                  + Sử dụng 1 biến trạng thái -> Đánh dấu thời điểm mà có chuyển động -> Chạy các hàm chuyển động như bình thường  
+                  Chỉ có thời điểm nào mà không có chuyển động mới được click
+      -->
+
+      <!-- 100 - Viết hàm javascript xử lý cho nút previous 
+            - Khi click vào nút bên trái thì phải
+            - Bước 1: Xác định được 2 phần tử: phần tử hiện tại và phần tử tiếp theo (phần tử đằng trước nó)
+            - Bước 2: Cho chuyển động
+      -->
+
+      <div id="slidewrapper">
+            <div class="slides">
+                  <ul>
+                        <li class="dangxem" style="background-image: url(img/87/87.1.jpg);"></li>
+                        <li style="background-image: url(img/87/87.2.jpg);"></li>
+                        <li style="background-image: url(img/87/87.3.jpg);"></li>
+                        <li style="background-image: url(img/87/87.4.jpg);"></li>
+                        <li style="background-image: url(img/87/87.5.jpg);"></li>
+                  </ul>
+            </div>
+
+            <div class="nuts">
+                  <b class="trai"><span class="fa fa-angle-left"></span></b>
+                  <b class="phai"><span class="fa fa-angle-right"></span></b>
+            </div>
+      </div>
+
+      <script src="87. Slide Transition Inspiration.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+*{margin: 0px; margin: 0px;}
+
+.chieuso1{
+      animation:chieu1 3s forwards !important; /*!important: ưu tiên thuộc tính CSS được thực hiện trước*/
+}
+@-webkit-keyframes chieu1{
+      0% {
+            transform: translateX(0px) translateY(0px); /*translateX (Dịch sang phải) : chuyển động theo chiều ngang từ trái qua phải, translateY (Dịch xuống dưới): chuyển động theo chiều dọc từ trên xuống dưới*/
+      }
+      25% {
+            transform: translateX(200px) translateY(0px);
+      }
+      50% {
+            transform: translateX(200px) translateY(200px);
+      }
+      80% {
+            transform: translateX(500px) translateY(200px);
+      }
+      90% {
+            transform: translateX(500px) translateY(500px);
+      }
+      100% {
+            transform: translateX(700px) translateY(500px);
+      }
+}
+
+#kcd{
+      animation: chieu2 3s forwards;
+}
+@-webkit-keyframes chieu2{
+      100% {
+            transform: translateX(0px) translateY(0px);
+      }
+      90% {
+            transform: translateX(200px) translateY(0px);
+      }
+      80% {
+            transform: translateX(200px) translateY(200px);
+      }
+      50% {
+            transform: translateX(500px) translateY(200px);
+      }
+      25% {
+            transform: translateX(500px) translateY(500px);
+      }
+      0% {
+            transform: translateX(700px) translateY(500px);
+      }
+}
+
+.ko-dong {
+      animation: none !important; /*Không chuyển động*/ /*!important: ưu tiên thuộc tính CSS được thực hiện trước*/
+}

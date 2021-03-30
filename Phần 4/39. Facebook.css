@@ -1,0 +1,54 @@
+*{margin: 0; padding: 0;}
+.thanhxanh{
+      height: 43px;
+      background: #3b5998;
+}
+.motphantu{
+      position: relative;
+      float: right;
+      margin-right: 200px;
+      margin-top: 7px;
+      transition: 0.4s;
+}
+.tamgiac{
+      color: black;
+      font-size: 19px;
+      transition: 0.4s;
+      cursor: pointer; /*Hiển thị hình bàn tay*/
+}
+.danhsach{
+      position: absolute;
+      top: 35px;
+      right: -13px;
+      width: 200px;
+      transition: 0.4s;
+      opacity: 0; /*Độ mờ*/
+      visibility: hidden; /*Ẩn phần tử*/
+}
+.danhsach:after{ /*Chèn nội dung/thẻ bên trên thẻ được chọn, đóng vai trò như thẻ div*/
+      content: ""; /*Nội dung được chèn*/
+      position: absolute;
+      top: -20px;
+      right: 8px;
+      width: 0px;
+      height: 0px;
+      border: 11px solid #ffff0000;
+      border-bottom-color: white;
+}
+
+.tamgiactrang{
+      color: white;
+}
+.ra{
+      opacity: 1;
+      visibility: visible; /*Hiển thị*/
+}
+
+li.list-group-item {
+      font-size: 13px;
+      padding: 5px 26px;
+}
+li.list-group-item:hover {
+      color: white;
+      background: #3b5998;
+}

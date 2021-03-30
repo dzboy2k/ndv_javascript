@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Class</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+      <script src="bootstrap-4.0.0/dist/js/bootstrap.js"></script>
+      <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.css">
+</head>
+
+<body>
+      <!-- Cách truy nhập đến 1 phần tử của thẻ html:
+      - Dựa vào thẻ html -> document.getElementsByTagName('h1') -> Trả về một mảng
+      - Dựa vào id của thẻ html -> Trả về 1 kết quả -> document.getElementById()
+      - Dựa vào class của thẻ html 
+            + Trả về một mảng có nhiều phần tử -> có số nhiều ở elements -> document.getElementsByClassName('tin')
+            + Khi là mảng thì để set thuộc tính từng phần tử thì phải duyệt mảng bằng từ khóa for -> tab
+      -->
+
+      <!-- card-deck -->
+      <div class="card-deck"> <!--https://placeholder.com/-->
+            <div class="card">
+                  <img class="card-img-top" src="img/30/30. 900x250.png" alt="Card image cap">
+                  <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                              additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+            </div>
+            <div class="card">
+                  <img class="card-img-top" src="img/30/30. 900x250.png" alt="Card image cap">
+                  <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                              content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+            </div>
+            <div class="card">
+                  <img class="card-img-top" src="img/30/30. 900x250.png" alt="Card image cap">
+                  <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                              additional content. This card has even longer content than the first to show that equal
+                              height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+            </div>
+      </div>
+
+      <div class="card-group">
+            <div class="card">
+                  <img class="card-img-top" src="img/30/30. 298x180.png" alt="Card image cap">
+                  <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                              additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+            </div>
+            <div class="card">
+                  <img class="card-img-top" src="img/30/30. 298x180.png" alt="Card image cap">
+                  <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                              content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+            </div>
+            <div class="card">
+                  <img class="card-img-top" src="img/30/30. 298x180.png" alt="Card image cap">
+                  <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                              additional content. This card has even longer content than the first to show that equal
+                              height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+            </div>
+      </div>
+
+      <script src="30. Sử dụng Class.js"></script>
+</body>
+
+</html>

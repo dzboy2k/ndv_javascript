@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>muffingroup-webdesign</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+      <script src="bootstrap-4.0.0/dist/js/bootstrap.js"></script>
+      <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.css">
+
+      <link rel="stylesheet" href="68. Slide.css">
+</head>
+
+<body>
+      <!-- 68. Viết hiệu ứng slide bằng javascript 
+            - Biết về CSS3 
+            - Các bước làm: 
+                  + 1. Xử lý phần nút chuyển trang trước
+                  + 2. Xử lý phần chuyển slide
+                  + 3. Chuyển được rồi thì cho hiệu ứng vào
+                  + 4. Đặt thời gian tự chuyển động
+      -->
+
+      <!-- 71. Viết javascript cho phần chuyển slide
+            - Để click vào thanh màu đen thì liên quan đến việc xử lý CSS
+            - CSS nằm trong class
+            - Class xử lý bằng javascript
+      -->
+
+      <!-- 73. Xử lý CSS cơ bản
+            - Phân tích: 
+                  + Phải chia layer
+                  + Các slide đều là absolute hết
+                  + Tất cả dều hiển thị Full màn hình
+
+            - Cách xử lý giao diện lúc nào cũng full màn hình:
+                  + Từ trên xuống dưới đến đoạn div cần phải full màn hình thì phải để thuộc tính height:100% (width: 100%)
+      -->
+
+      <!-- 75. Xử lý chi tiết giao diện của slide
+      -> Đầu tiên tất cả slide phải ẩn đi, riêng một slide hiển thị -->
+
+      <!-- 76. Tính vị trí của đối tượng bằng javascript
+            - 1. Làm slide chuyển động khi click vào nút chuyển slide
+                  Bước 1: Xử lý click 
+                        + Click vào nút thì mình biết người ta click.
+                        + Hàm mới trong javascript: previousElementSibling
+                        + abc.previousElementSibling -> trả về phần tử ở trước nó
+                        + nextElementSibling -> trả về phần tử ở sau nó
+
+                  Bước nhỏ 2: Cho slide tương ứng hiển thị
+                        + 1. Khai báo biến chứa mảng các phần tử của slide
+                        + 2. Cho các phần tử biến mất hết -> Bằng cách remove active -> Dùng vòng lặp for vì nó là mảng
+                        + 3. Dựa vào "Bước 1: Xử lý click" thì lấy ra vị trí nút và cho phần tử có số thứ tự là vị trí nút hiển thị lên là xong
+
+            - 2. Làm hiệu ứng cho việc chuyển slide xong thì có một loạt hiệu ứng đi vào     
+      -->
+
+      <!-- 78. Viết chuyển động bằng CSS3
+            - Sử dụng Animation
+            - Khi mà chuyển slide thì hiệu ứng bắt đầu chạy
+            - Logic của việc viết slide
+                  - 1. Khi chuyển slide tức là cái slide đó được add class tên là active
+                  - 2. Dựa vào cái active đấy để mà viết hiệu ứng cho các phần tử bên trong -> .active.nauduoi1{}, .active.textnoidung{}
+      -->
+
+      <!-- 80. Lý thuyết về auto slide
+            - Sử dụng một hàm mà sau mỗi khoảng thời gian thì hàm đó tự gọi ra -> setInterval(function(){},4000)
+      -->
+
+      <!-- 81. Viết hàm tự chuyển slide
+            - Sau 5s gọi hàm xử lý
+                  + Bước 1: Tính xem đang ở slide nào, slide số mấy.
+                  + Bước 2: Thì cho tất cả slide ẩn đi, vào trong cái slide số thứ tự được tính ở bước 1 + 1 (nextElementSibling) hiển thị lên
+                  + Bước 3: Check xem đã đến slide cuối cùng chưa, nếu đến rồi thì cho slide đầu tiên hiển thị
+      -->
+
+      <!-- 85. hàm clearInterval -> Xóa chế đô tự gọi hàm sau mỗi thời gian của hàm setInterval-->
+
+      <!-- Sublime Text: Làm đẹp code: Bôi đen -> Edit -> Line -> Reindent -->
+      <div class="slidewrapper">
+            <div class="cacslide">
+                  <ul>
+                        <li class="active">
+                              <div class="motslide">
+                                    <div class="anh" style="background-image: url(img/68/68.1.jpg);"></div>
+                                    <img src="img/68/68.4.png" alt="" class="nauduoi1">
+                                    <img src="img/68/68.4.png" alt="" class="nauduoi2">
+                                    <img src="img/68/68.5.png" alt="" class="nautren">
+                                    <div class="textnoidung">
+                                          <h2>01</h2>
+                                          <small>TH TRUE Milk</small>
+                                          <div class="ke"></div>
+                                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                                                earum
+                                                minima
+                                                accusantium aspernatur iusto quisquam corrupti autem laboriosam voluptas
+                                                commodi!
+                                                Necessitatibus tempora molestias ut consequatur assumenda explicabo id
+                                                laboriosam?
+                                                Cupiditate?</p>
+                                          <a href="#" class="nut">See Project</a>
+                                    </div>
+
+                              </div>
+                        </li>
+
+                        <li>
+                              <div class="motslide">
+                                    <div class="anh" style="background-image: url(img/68/68.2.jpg);"></div>
+                                    <img src="img/68/68.6.png" alt="" class="nauduoi1">
+                                    <img src="img/68/68.6.png" alt="" class="nauduoi2">
+                                    <img src="img/68/68.7.png" alt="" class="nautren">
+                                    <div class="textnoidung">
+                                          <h2>02</h2>
+                                          <small>VinaMilk</small>
+                                          <div class="ke"></div>
+                                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                                                earum
+                                                minima
+                                                accusantium aspernatur iusto quisquam corrupti autem laboriosam voluptas
+                                                commodi!
+                                                Necessitatibus tempora molestias ut consequatur assumenda explicabo id
+                                                laboriosam?
+                                                Cupiditate?</p>
+                                          <a href="#" class="nut">See Project</a>
+                                    </div>
+
+                              </div>
+                        </li>
+
+                        <li>
+                              <div class="motslide">
+                                    <div class="anh" style="background-image: url(img/68/68.3.jpg);"></div>
+                                    <img src="img/68/68.8.png" alt="" class="nauduoi1">
+                                    <img src="img/68/68.8.png" alt="" class="nauduoi2">
+                                    <img src="img/68/68.9.png" alt="" class="nautren">
+                                    <div class="textnoidung">
+                                          <h2>03</h2>
+                                          <small>Devondale Milk</small>
+                                          <div class="ke"></div>
+                                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                                                earum
+                                                minima
+                                                accusantium aspernatur iusto quisquam corrupti autem laboriosam voluptas
+                                                commodi!
+                                                Necessitatibus tempora molestias ut consequatur assumenda explicabo id
+                                                laboriosam?
+                                                Cupiditate?</p>
+                                          <a href="#" class="nut">See Project</a>
+                                    </div>
+
+                              </div>
+                        </li>
+
+                        <li>
+                              <div class="motslide">
+                                    <div class="anh" style="background-image: url(img/68/68.10.jpg);"></div>
+                                    <img src="img/68/68.8.png" alt="" class="nauduoi1">
+                                    <img src="img/68/68.8.png" alt="" class="nauduoi2">
+                                    <img src="img/68/68.9.png" alt="" class="nautren">
+                                    <div class="textnoidung">
+                                          <h2>04</h2>
+                                          <small>MORIGANA</small>
+                                          <div class="ke"></div>
+                                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
+                                                earum
+                                                minima
+                                                accusantium aspernatur iusto quisquam corrupti autem laboriosam voluptas
+                                                commodi!
+                                                Necessitatibus tempora molestias ut consequatur assumenda explicabo id
+                                                laboriosam?
+                                                Cupiditate?</p>
+                                          <a href="#" class="nut">See Project</a>
+                                    </div>
+
+                              </div>
+                        </li>
+                  </ul>
+
+            </div>
+            <!--Hết nội dung Slide-->
+
+            <div class="chuyenslide">
+                  <ul>
+                        <li class="kichhoat">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                  </ul>
+            </div>
+
+      </div>
+      <!--End slidewrapper-->
+
+      <script src="68. Slide.js"></script>
+</body>
+
+</html>

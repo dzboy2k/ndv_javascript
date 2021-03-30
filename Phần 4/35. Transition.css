@@ -1,0 +1,8 @@
+*{margin: 0; padding: 0;}
+
+.card{
+      transition: 0.4s; /*Thời gian chuyển động*/
+}
+.diphai{
+      transform: translateX(400px); /*Di chuyển theo chiều ngang sang bên phải*/
+}

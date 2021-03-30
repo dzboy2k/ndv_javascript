@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Transition</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+      <script src="bootstrap-4.0.0/dist/js/bootstrap.js"></script>
+      <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.css">
+
+      <link rel="stylesheet" href="35. Transition.css">
+</head>
+
+<body>
+      <!-- Bắt đầu viết hiệu ứng bằng javascript
+            - Kiến thức sử dụng:
+                  + Kiến thức lập trình cơ bản: biến, toán tử, vòng lặp
+                  + Kiến thức xử lý hiệu ứng: truy xuất một phân tử, thao tác với class, document ready
+            
+            - Phương pháp hiệu quả nhất hiện nay là sử dụng kết hợp javascript và CSS thông qua việc thao tác với class
+
+            - Bài tập 1: Click vào một nút cho khối nội dung đi sang phải, click lần nữa, khối nội dung trở về chỗ cũ
+
+            - Phương pháp làm:
+                  + Sử dụng transition 
+                        + Dễ làm, chỉ thay đổi class và viết 1 dòng css là xong, kèm theo transition 0.4s
+                        + Có 2 chiều luôn, click 2 lần đều có chuyển động
+
+                  + Sử dụng animation
+                        + Khó hơn, tạo chuyển động nhiều thao tác hơn
+                        + Chuyển động tự do
+      -->
+      
+      <div class="text-sm-center">
+            <button class="btn btn-info" id="nut1">Click vào để test hàm toggle</button>
+      </div>
+
+      <div class="container">
+            <div class="row">
+                  <div class="col-sm-4">
+                        <div class="card">
+                              <div class="card-header">
+                                    Khối nội dung
+                              </div>
+                              <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional
+                                          content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+
+      <script src="35. Transition.js"></script>
+</body>
+
+</html>

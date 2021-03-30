@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Facebook</title>
+      <!-- Viết tuowgn tác ảnh trên facebook - chưa kết nối dữ liệu -->
+      <link rel="stylesheet" href="118. Facebook.css">
+</head>
+<body>
+      <!-- Sublime text: Alt + Shift + 2 : Chia đôi màn hình -->
+      <!-- 118 - Viết chức năng hiển thị ảnh của facebook bằng javascript native (javascript thuần) 
+            - Bài toán 1: 
+                  + Làm được phần chuyển ảnh "next..."
+                  + Click vào nó chuyển ảnh
+            
+            - Bài toán 2:
+                  + Làm được phần hiển thị cái "chuyển ảnh ở bước 1"
+      -->
+
+      <!-- 119 - Dựng HTML cho project viết tương tác ảnh trên facebook
+            - Phần HTML:
+                  - 1. Phần dưới, phần giao diện trước khi click: 
+                        + Menu trái 
+                        + Menu trên
+                        + Bên phải
+                        + Nội dung ở giữa
+
+                  - 2. Bên trên (khi click vào thì hiển thị)
+                        + Div đen
+                        + Noidungphongto
+                        + Nutx
+      -->
+
+      <!-- 123 - Xử lý logic ban đầu cho chương trình
+            - Click vào thì hiển thị nền đen
+                  + 1. Làm cái nền đen
+                  + 2. Cho nền đen biến mất
+                  + 3. Click vào được ảnh
+                  + 4. Cho nền đen hiện lên
+      -->
+
+      <!-- 128 - Xử lý hiển thị khối thông tin bằng javascript
+            - Click vào nút thì hiển thị khối đen
+            - Hiển thị cả khối trắng bằng cách thay đổi class của khối trắng
+
+      -->
+
+      <!-- 129 - Bắt đầu làm phần ảnh 
+            - Một nhóm các ảnh: 
+                  1. Nhóm các ảnh ở giữa
+                  2. 2 cái nút click ở bên trái và bên phải
+      -->
+
+      <!-- 131 - Căn giữa một khối theo chiều dọc
+            - Dùng cách absolute, relative 
+                  + Phần tử absolute để width: 100px; height: 100px;
+                  + Top: 50%; Tranform: translateY(-50%);
+            
+            - Sử dụng flex 
+                  + Không biết chính xác cái cỡ của ảnh là bao nhiêu:
+                  + display: flex; -> Kích hoạt chế độ hiển thị flex
+                  align-items: center; -> Căn phần tử vào giữa theo chiều dọc
+      -->
+
+      <!-- 132 - Logic code của phần gallery ảnh
+            - Ban đầu tất cả ẩn đi
+            - Sau đó định nghĩa một class active đặt vào thẻ li
+                  + opacity: 1;
+                  + visibility: visible;
+            - Khi click vào ảnh nào thì cho ảnh đó được active
+      -->
+
+      <!-- 133 - Sử dụng Javascript nhận biết ảnh Active:
+            + Click vào ảnh -> Phải lấy được chỉ số của ảnh đó trong mảng
+            + Cho ảnh tương ứng trong khối đen hiển thị ra -> bằng cách add cho nó class là active, định nghĩa active là hiển thị
+      -->
+
+      <!-- 134 - Cách xử lý active
+            - Khi đóng div đen thì cho cả cái class là active cũng biến mất luôn
+            - Chú ý là khi mà click vào nền đen thì mình mới khai báo, nếu khai báo trước thì chưa có active
+      -->
+
+      <!-- 135 - Viết hàm thực hiện việc chuyển ảnh của facebook
+            - Logic -> để click vào nút next để chuyển ảnh thì mình phải thực hiện các bước sau:
+                  + 1. Click vào thì biết là click
+                  + 2. Biết được ảnh nào đang hiển thị
+                  + 3. Xác định ảnh tiếp theo sẽ hiển thị
+                        + Trường hợp 1: Nếu ảnh này không phải ảnh cuối cùng -> ảnh tiếp theo = ảnh active + 1
+                        + Trường hợp 2: Nếu ảnh này là ảnh cuối cùng -> ảnh tiếp theo = ảnh đầu tiên
+                        + 1. Độ dài của slide ảnh 
+                  4. Cho ảnh đang active biến mất và cho ảnh tiếp theo hiển thị 
+      -->
+
+      <!-- 140 - Bài tập làm hoàn chỉnh hiệu ứng ảnh Facebook
+            - Hãy dựa trên hiệu ứng 1 gallery ảnh viết cho nhiều gallery ảnh
+            - Cách 1 làm nhiều khối popup
+            - Cách 2 Sử dụng truyền biến
+      -->
+
+      <div class="popup">
+            <div class="nenden">
+                  <div class="dongLai"></div>
+            </div>
+            <div class="thongtinanh">
+                  <div class="tttrai">
+                        <div class="khoiCacAnh">
+                              <ul>
+                                    <li><img src="img/118/118.4.png" alt=""></li>
+                                    <li><img src="img/118/118.5.png" alt=""></li>
+                                    <li><img src="img/118/118.6.png" alt=""></li>
+                                    <li><img src="img/118/118.7.png" alt=""></li>
+                                    <li><img src="img/118/118.12.png" alt=""></li>
+                                    <li><img src="img/118/118.13.png" alt=""></li>
+                              </ul>
+                        </div>
+                        <div class="khoiCacNut">
+                              <b class="ntrai">Sang trái</b>
+                              <b class="nphai">Sang phải</b>
+                        </div>
+                  </div>
+                  <div class="ttphai"></div>
+            </div>
+      </div>
+
+      <div class="menutren">
+            <img src="img/118/118.2.png" alt="">
+      </div>
+      <section class="noidungchinh">
+            <div class="trai">
+                  <img src="img/118/118.1.png" alt="">
+            </div>
+            <div class="giua">
+                  <div class="motkhoi">
+                        <div class="avatar">
+                              <div class="atrai">
+                                    <img src="img/118/118.8.jpg" alt="">
+                              </div>
+                              <div class="aphai">
+                                    <b>Nguyễn Thị Hà</b>
+                                    <span>đã thêm 4 ảnh mới - cùng với Nguyễn Hoàng Anh và 4 người khác.</span>
+                                    <div class="ngaythang">13 tháng 9 lúc 21:54</div>
+                              </div>
+                        </div>
+                        <div class="cacAnh">
+                              <img src="img/118/118.4.png" alt="" class="motanhtren">
+                              <img src="img/118/118.5.png" alt="">
+                              <img src="img/118/118.6.png" alt="">
+                              <img src="img/118/118.7.png" alt="">
+                        </div>
+                  </div> <!--Hết motkhoi-->
+
+                  <div class="motkhoi">
+                        <div class="avatar">
+                              <div class="atrai">
+                                    <img src="img/118/118.8.jpg" alt="">
+                              </div>
+                              <div class="aphai">
+                                    <b>Nguyễn Thị Hà</b>
+                                    <span>đã thêm 4 ảnh mới - cùng với Nguyễn Hoàng Anh và 4 người khác.</span>
+                                    <div class="ngaythang">13 tháng 9 lúc 21:54</div>
+                              </div>
+                        </div>
+                        <div class="cacAnh">
+                              <img src="img/118/118.4.png" alt="" class="motanhtren">
+                              <img src="img/118/118.5.png" alt="">
+                              <img src="img/118/118.6.png" alt="">
+                              <img src="img/118/118.7.png" alt="">
+                        </div>
+                  </div> <!--Hết motkhoi-->
+
+                  <div class="motkhoi">
+                        <div class="avatar">
+                              <div class="atrai">
+                                    <img src="img/118/118.8.jpg" alt="">
+                              </div>
+                              <div class="aphai">
+                                    <b>Nguyễn Thị Hà</b>
+                                    <span>đã thêm 4 ảnh mới - cùng với Nguyễn Hoàng Anh và 4 người khác.</span>
+                                    <div class="ngaythang">13 tháng 9 lúc 21:54</div>
+                              </div>
+                        </div>
+                        <div class="cacAnh">
+                              <img src="img/118/118.4.png" alt="" class="motanhtren">
+                              <img src="img/118/118.5.png" alt="">
+                              <img src="img/118/118.6.png" alt="">
+                              <img src="img/118/118.7.png" alt="">
+                        </div>
+                  </div> <!--Hết motkhoi-->
+
+            </div>
+            <div class="phai">
+                  <img src="img/118/118.3.png" alt="">
+            </div>
+      </section>
+
+      <script src="118. Facebook.js"></script>
+</body>
+</html>

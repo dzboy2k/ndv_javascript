@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Animation 2 chiều</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+      <script src="bootstrap-4.0.0/dist/js/bootstrap.js"></script>
+      <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.css">
+
+      <link rel="stylesheet" href="37. Animation 2 chiều.css">
+</head>
+<body>
+      <!-- Xử lý 2 chiều với animation 
+            - Animation không tự chuyển động theo chiều ngược lại giống như Transition nên khi sử dụng hàm toggle class để bỏ class thì sẽ không có hiệu ứng -> Không được dùng hàm toggle class
+
+            - Phải dùng cách xử lý javascript thông thường với if - else để xác định khi nào người dùng ấn lần 1 và ấn lần 2
+
+            - Xử lý animation như sau: 
+                  + Bước 1: Tự định nghĩa CSS cho phần tử vốn có của nó -> chính là id = "kcd" có chuyển động từ đầu -> Phải định nghĩa thêm một class để giữ chốt, cấm nó chuyển động -> ko-dong -> animaton:none
+
+                  + Bước 2: Khi click lần 1 thì cho remove ko-dong -> Sau đó add chuyển động theo chiều xuôi vào (chieu1) 
+
+                  + Bước 3: Khi click lần 2 -> Remove chuyển động chieu1 
+      -->
+
+      <button class="btn btn-info btn-block btn-lg" id="nuthieuung">Cách làm toggle class bằng tay</button>
+      <button class="btn btn-danger ko-dong" id="kcd">Chuyển động</button> <!--kcd: khối chuyển động-->
+
+      <script src="37. Animation 2 chiều.js"></script>
+</body>
+</html>

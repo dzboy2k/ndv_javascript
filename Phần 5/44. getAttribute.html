@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>getAttribute</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+      <script src="bootstrap-4.0.0/dist/js/bootstrap.js"></script>
+      <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.css">
+</head>
+
+<body>
+      <!-- Cách gửi tham số thông qua thẻ html
+            - Sử dụng thuộc tính data-thamso ở phía html
+            - Lấy về thông qua hàm getAttribute -> Ở phía js là getAttribute 
+            - Có thể gửi nhiều tham số (không giới hạn)
+      -->
+
+      <button class="btn btn-block btn-secondary nuttongquat" id="n1" data-matkhau="Anh Việt cho số" data-thongtin2="Thích gửi gì thì gửi">Click để lấy giá trị</button>
+
+      <button class="btn btn-info nuttongquat" data-matkhau="Thập diệp mai phục" data-thongtin2="Mật thám">Click vào nút số 2</button>
+
+      <button class="nuttongquat" data-matkhau="Game of Throne" data-thongtin2="fedu.vn">Click vào 3 đi ae</button>
+
+      <script src="44. getAttribute.js"></script>
+</body>
+
+</html>

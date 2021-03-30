@@ -1,0 +1,78 @@
+*{margin: 0; padding: 0;}
+html, body {
+      height: 100%;
+      overflow-x: hidden; /*Không có thanh cuộn ngang*/
+      background: gray;
+}
+.noidungto {
+      height: 100%;
+      /*transition: ease-in-out 1.2s; /*linear: chuyển động đều, ease-in-out: chuyển động nhanh chậm */
+      transition: cubic-bezier(0.38, -0.15, 0.92, 0.09) 0.5s; /* cubic bezier: tốc độ, gia tốc chuyển động */
+
+      box-sizing: border-box; /*Giữ nguyên độ rộng hiện tại không cộng thêm padding*/
+      perspective: 2200px; /*Góc nhìn*/
+}
+.nut {
+      width: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+}
+
+.menutrai {
+      height: 100%;
+      background: #28a745;
+      width: 300px;
+      position: fixed; /*Giữ nguyên vị trí khí cuộn chuột*/
+      top: 0px;
+      left: 0px;
+      z-index: 2;
+      transition: 0.4s;
+}
+.menutrai.vetrai{
+      transform: translateX(-100%); /*Di chuyển về bên trái*/
+}
+
+h3.display-3.text-sm-center {
+      font-size: 35px;
+      padding: 20px;
+      color: white;
+}
+li.list-group-item {
+      background: none;
+      color: white;
+      text-transform: uppercase; /*Chữ hoa*/
+}
+.den {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 1;
+      background: #0000006b;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      transition: 0.4s;
+
+      opacity: 0;
+      visibility: hidden;
+}
+.len{
+      opacity: 1;
+      visibility: visible;
+}
+
+.dichphai{
+      transform: translateX(300px);
+}
+
+.mautrang{
+      width: 100%;
+      height: 100%;
+      background: white;
+      transition: 0.4s;
+      transform-origin: 100% 0%; /*Trái - Trên*/
+}
+.trangquay{
+      transform: rotateY(-15deg);
+}
